@@ -5,16 +5,18 @@ import (
 	"log"
 	"os"
 
+	"github.com/hgayan7/the-terminal-news/api"
 	"github.com/urfave/cli/v2"
 )
 
 func SetupCLI() {
 	app := &cli.App{
-		Name:  "greet",
-		Usage: "fight the loneliness!",
-		Flags: setupFlags(),
+		Name:     "theterminalnews",
+		Usage:    "Read news in your terminal",
+		Flags:    setupFlags(),
+		Commands: setupCommands(),
 		Action: func(c *cli.Context) error {
-			fmt.Println("Hello friend!")
+			api.FetchNews()
 			return nil
 		},
 	}
@@ -28,24 +30,26 @@ func SetupCLI() {
 
 func setupFlags() []cli.Flag {
 	flags := []cli.Flag{
-		cli.StringFlag{
-			Name:  "lang",
-			Value: "en",
+		&cli.StringFlag{
+			Name:    "lang",
+			Value:   "en",
+			Aliases: []string{"l"},
 		},
 	}
 	return flags
 }
 
-// func setupCommands() []*cli.Command {
-// 	{
-// 		commands = []*cli.Command{
-// 			Name:  "topic",
-// 			Usage: "Shows news by topic",
-// 			Flags: setupFlags(),
-// 			Action: func(c *cli.Context) error {
-// 				fmt.Println("Done")
-// 			},
-// 		}
-// 	}
-// 	return commands
-// }
+func setupCommands() []*cli.Command {
+	commands := []*cli.Command{
+		{
+			Name:    "tech",
+			Aliases: []string{"t"},
+			Usage:   "Get news about technology",
+			Action: func(c *cli.Context) error {
+				fmt.Println("tech command used")
+				return nil
+			},
+		},
+	}
+	return commands
+}
