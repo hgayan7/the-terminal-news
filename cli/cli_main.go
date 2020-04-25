@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/hgayan7/the-terminal-news/api"
 	"github.com/urfave/cli/v2"
 )
 
@@ -16,7 +15,8 @@ func SetupCLI() {
 		Flags:    setupFlags(),
 		Commands: setupCommands(),
 		Action: func(c *cli.Context) error {
-			api.FetchNews()
+			// api.FetchNews()
+			fmt.Println(c.StringSlice("topic"))
 			return nil
 		},
 	}
@@ -35,6 +35,10 @@ func setupFlags() []cli.Flag {
 			Value:   "en",
 			Aliases: []string{"l"},
 		},
+		&cli.StringSliceFlag{
+			Name:    "topic",
+			Aliases: []string{"t"},
+		},
 	}
 	return flags
 }
@@ -43,7 +47,7 @@ func setupCommands() []*cli.Command {
 	commands := []*cli.Command{
 		{
 			Name:    "tech",
-			Aliases: []string{"t"},
+			Aliases: []string{"te"},
 			Usage:   "Get news about technology",
 			Action: func(c *cli.Context) error {
 				fmt.Println("tech command used")
