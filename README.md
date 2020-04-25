@@ -1,5 +1,5 @@
 # the-terminal-news
-### Read news inside terminal.
+### Read news inside the terminal.
 
 <img width="1440" alt="Screenshot 2020-04-25 at 8 33 09 PM" src="https://user-images.githubusercontent.com/29502161/80283334-5ad24400-8734-11ea-8052-5d2f98a43fc0.png">
 
