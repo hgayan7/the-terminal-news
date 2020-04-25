@@ -16,7 +16,7 @@ set apiKey=your_api_key
 ```
 export apiKey=your_api_key
 ```
-#### 3. go run main.go
+#### 3. Execute the binary
 
 
 ### News are fetched from [NEWS API](https://newsapi.org)
