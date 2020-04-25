@@ -1,22 +1,20 @@
 package cli
 
 import (
-	"fmt"
 	"log"
 	"os"
 
+	"github.com/hgayan7/the-terminal-news/api"
 	"github.com/urfave/cli/v2"
 )
 
 func SetupCLI() {
 	app := &cli.App{
-		Name:     "theterminalnews",
-		Usage:    "Read news in your terminal",
-		Flags:    setupFlags(),
-		Commands: setupCommands(),
+		Name:  "theterminalnews",
+		Usage: "Read news in your terminal",
+		Flags: setupFlags(),
 		Action: func(c *cli.Context) error {
-			// api.FetchNews()
-			fmt.Println(c.StringSlice("topic"))
+			api.FetchNews(c.String("lang"), c.StringSlice("topic"))
 			return nil
 		},
 	}
@@ -41,19 +39,4 @@ func setupFlags() []cli.Flag {
 		},
 	}
 	return flags
-}
-
-func setupCommands() []*cli.Command {
-	commands := []*cli.Command{
-		{
-			Name:    "tech",
-			Aliases: []string{"te"},
-			Usage:   "Get news about technology",
-			Action: func(c *cli.Context) error {
-				fmt.Println("tech command used")
-				return nil
-			},
-		},
-	}
-	return commands
 }
