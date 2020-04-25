@@ -58,7 +58,6 @@ func FetchNews(language string, topics []string) {
 		var errorObject Error
 		json.Unmarshal(body, &errorObject)
 		showError(errorObject)
-		os.Exit(1)
 	}
 	if len(responseObject.News) == 0 {
 		fmt.Println("No News Found. Try Using different flags.")
