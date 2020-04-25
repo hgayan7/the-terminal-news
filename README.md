@@ -1,8 +1,13 @@
 # the-terminal-news
-#### Read news inside terminal.
+### Read news inside terminal.
 
-![snap2](https://user-images.githubusercontent.com/29502161/80281769-168e7600-872b-11ea-8bf7-079168968d6f.JPG)
-![snap1](https://user-images.githubusercontent.com/29502161/80281772-18583980-872b-11ea-9fbe-a4f9127ad4e9.JPG)
+<p align="center">
+  <img width="600" height="400" src="https://user-images.githubusercontent.com/29502161/80281769-168e7600-872b-11ea-8bf7-079168968d6f.JPG">
+</p>
+
+<p align="center">
+  <img width="600" height="400" src="https://user-images.githubusercontent.com/29502161/80281772-18583980-872b-11ea-9fbe-a4f9127ad4e9.JPG">
+</p>
 
 ## How to use - 
 #### 1. Get an API Key from [NEWS API](https://newsapi.org/)
